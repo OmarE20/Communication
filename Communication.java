@@ -1,17 +1,23 @@
 // This code is part 3 of our project code
 // This part is responsible for the communication between the computer on the vehicle and the computer on the charging station
 public class Communication {
-
+    
+    /* 'enum' is a special class used to store constants/unchangeable variables.
+    We use this class to store our 3 states of power: Off, on and charging. */
     enum PowerState {
         OFF, ON, CHARGING
     }
 
+    // This line creates private
     private PowerState currentState;
 
+    // This class is used to set the current state of power for the AIV to 'off' 
     public Communication() {
         this.currentState = PowerState.OFF;
     }
 
+
+    // 
     public void receiveCommand(String command) {
         switch (command.toLowerCase()) {
             case "start":
